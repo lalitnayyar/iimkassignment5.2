@@ -1,0 +1,47 @@
+# Sales Performance Dashboard
+
+## Assignment Information
+- Course: IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers
+- Student Name: Lalit Nayyar
+- Email ID: lalitnayyar@gmail.com
+- Assignment: Required Assignment 5.2 : Applying Data Visualisation Principles
+
+## Instructions to Generate Visualizations
+
+1. First, run the Python script to generate all visualizations:
+   ```python
+   python Sales_Dashboard.py
+   ```
+
+2. This will create three PNG files:
+   - monthly_sales_trends.png
+   - top_products.png
+   - sales_by_country.png
+
+3. The visualizations follow the 4C's principles:
+   - Clear: Easy to understand and interpret
+   - Clean: Minimal clutter and distractions
+   - Concise: Focused on key information
+   - Captivating: Visually engaging and memorable
+
+## Analysis of Visualizations
+
+1. Monthly Sales Trends
+   - Shows the overall business growth
+   - Identifies seasonal patterns
+   - Helps in forecasting future sales
+
+2. Best-selling Products
+   - Identifies top 10 products by sales value
+   - Helps in inventory management
+   - Guides marketing focus
+
+3. Sales by Country
+   - Shows geographical distribution of sales
+   - Identifies key markets
+   - Helps in international strategy
+
+## Data Cleaning Process
+- Removed cancelled orders (Invoice numbers starting with 'C')
+- Removed negative quantities and prices
+- Calculated total sales (Quantity * UnitPrice)

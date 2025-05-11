@@ -1,0 +1,106 @@
+# Sales Performance Dashboard
+
+## Assignment Information
+- **Course**: IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers
+- **Student Name**: Lalit Nayyar
+- **Email ID**: lalitnayyar@gmail.com
+- **Assignment**: Required Assignment 5.2 : Applying Data Visualisation Principles
+
+## Introduction
+This notebook presents a comprehensive analysis of the online retail dataset, featuring multiple visualizations that follow the 4C's principles of data visualization. The analysis includes:
+
+1. Monthly Sales Trends (with trend line)
+2. Top 10 Best-selling Products
+3. Sales by Country
+4. Seasonal Sales Analysis
+5. Customer Order Distribution
+
+## Data Loading and Preprocessing
+```python
+from sales_analysis_enhanced import load_and_clean_data
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from IPython.display import Image, display
+
+# Load and clean the data
+df = load_and_clean_data()
+```
+
+## Visualizations and Analysis
+
+### 1. Monthly Sales Trends
+This visualization shows the overall sales trend over time, including a trend line to highlight the general direction of sales growth.
+```python
+display(Image(filename='monthly_sales_trends.png'))
+```
+
+Key Insights:
+- Overall trend direction
+- Seasonal patterns
+- Peak sales periods
+
+### 2. Best-selling Products
+Analysis of the top 10 products by sales value, helping identify the most profitable items.
+```python
+display(Image(filename='top_products.png'))
+```
+
+Key Insights:
+- Most valuable products
+- Product category patterns
+- Revenue contribution
+
+### 3. Sales by Country
+Geographical distribution of sales, showing the most important markets.
+```python
+display(Image(filename='sales_by_country.png'))
+```
+
+Key Insights:
+- Key markets
+- Market concentration
+- International presence
+
+### 4. Seasonal Analysis
+Monthly average sales to identify seasonal patterns.
+```python
+display(Image(filename='seasonal_analysis.png'))
+```
+
+Key Insights:
+- Peak sales months
+- Seasonal patterns
+- Low season identification
+
+### 5. Customer Analysis
+Distribution of orders across customers to understand buying patterns.
+```python
+display(Image(filename='customer_analysis.png'))
+```
+
+Key Insights:
+- Customer loyalty patterns
+- Order frequency
+- Customer segmentation opportunities
+
+## Key Statistics
+```python
+from sales_analysis_enhanced import main
+stats = main()
+print(f"Total Sales: £{stats['total_sales']:,.2f}")
+print(f"Total Orders: {stats['total_orders']:,}")
+print(f"Total Customers: {stats['total_customers']:,}")
+print(f"Total Products: {stats['total_products']:,}")
+print(f"Average Order Value: £{stats['avg_order_value']:.2f}")
+```
+
+## Conclusion
+This dashboard provides a comprehensive view of the online retail business through various visualizations that adhere to the 4C's principles:
+
+- **Clear**: Each visualization includes proper titles, labels, and clear data representation
+- **Clean**: Minimal clutter with focused presentation of key information
+- **Concise**: Direct communication of important metrics and patterns
+- **Captivating**: Use of appropriate colors and visual elements for engagement
+
+The analysis reveals important insights about sales patterns, product performance, and customer behavior that can guide business decisions.
