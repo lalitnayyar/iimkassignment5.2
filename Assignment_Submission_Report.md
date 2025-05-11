@@ -1,10 +1,11 @@
-# Data Visualization Assignment Submission Report
-## IIMK Professional Certificate in Data Science and AI for Managers
+# Data Visualization and Analysis Report
 
-### Student Information
-- Course: Data Visualization and Communication
-- Assignment: Module 5.2 - Retail Sales Analysis
-- Dataset: Online Retail Data Set
+## Assignment Information
+- **Course**: IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers
+- **Student Name**: Lalit Nayyar
+- **Email ID**: lalitnayyar@gmail.com
+- **Assignment**: Required Assignment 5.2 : Applying Data Visualisation Principles
+- **Submission Date**: May 11, 2025
 
 ## Part 1: Visualizing Retail Sales for Non-Technical Stakeholders
 
@@ -83,6 +84,59 @@
 ## Part 3: Data Cleaning and Preparation
 
 ### 3.1 Technical Implementation
+
+#### Automated Visualization Generation
+
+A comprehensive script (`generate_all_visualizations.py`) was developed to automate the creation of all visualizations with performance tracking:
+
+```python
+def main():
+    """Main function to generate all visualizations with progress tracking"""
+    total_start = time.time()
+    
+    # Load data with metrics
+    print("\n1. Loading and Preparing Data...")
+    start_time = time.time()
+    df = load_data()
+    print_metrics(start_time, "Data Loading")
+    
+    # Generate all visualizations with progress tracking
+    visualizations = [
+        ("Monthly Sales Chart", create_monthly_sales_chart),
+        ("Country Sales Distribution", create_country_sales_chart),
+        ("Product Analysis", create_product_analysis),
+        ("Customer Cohort Analysis", create_customer_cohort),
+        ("Executive Dashboard", create_sales_dashboard)
+    ]
+    
+    for name, func in tqdm(visualizations):
+        start_time = time.time()
+        func(df)
+        print_metrics(start_time, name)
+```
+
+Key Features:
+- Progress tracking with tqdm
+- Performance metrics (CPU, Memory, Time)
+- Both static (SVG) and interactive (HTML) outputs
+- Comprehensive error handling
+
+#### Performance Monitoring
+
+```python
+def get_system_metrics():
+    """Get current system metrics"""
+    return {
+        'cpu_usage': psutil.cpu_percent(),
+        'memory_used': psutil.virtual_memory().percent,
+        'memory_available': psutil.virtual_memory().available / (1024**3)
+    }
+```
+
+This implementation ensures:
+- Efficient resource utilization
+- Progress visibility
+- Performance optimization opportunities
 
 1. **Visualization Export Setup**
    ```python
