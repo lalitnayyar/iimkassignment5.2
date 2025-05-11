@@ -1,5 +1,9 @@
 # Data Visualization Assignment: Online Retail Analysis
-
+- **Course**: IIMK's Professional Certificate in Data Science and Artificial Intelligence for Managers
+- **Student Name**: Lalit Nayyar
+- **Email ID**: lalitnayyar@gmail.com
+- **Assignment**: Required Assignment 5.2 : Applying Data Visualisation Principles
+- **Submission Date**: May 11, 2025
 ## Project Overview
 This project demonstrates the application of data visualization principles using an online retail dataset. The analysis is presented in two complementary notebooks, each focusing on different aspects of data visualization and analysis while following the 4C's principles (Clear, Clean, Concise, Captivating).
 
@@ -173,6 +177,34 @@ Focused on non-technical stakeholder presentation:
   - kaleido == 0.2.1
   - numpy >= 1.21.0
   - jupyter >= 1.0.0
+  - tqdm >= 4.65.0
+  - psutil >= 5.9.0
+
+## Quick Start
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Generate all visualizations:
+   ```bash
+   python generate_all_visualizations.py
+   ```
+
+   This will create both interactive (.html) and static (.svg) versions of all visualizations in the `visualizations` folder, with progress tracking and performance metrics.
+
+3. **Generate the Assignment Submission Report:**
+   ```bash
+   python generate_report.py
+   ```
+   This will produce `Assignment_Submission_Report.docx` in the project directory.
+
+   - The report contains all key visualizations and outputs from both notebooks (`Retail_Sales_Visualization.ipynb` and `Sales_Dashboard_Updated.ipynb`).
+   - The report is structured into two main sections:
+     1. **Key Visual Insights**: Presents two insightful charts (monthly sales trends and country-wise sales distribution) with clear, concise, captivating explanations.
+     2. **Comprehensive Dashboard**: Includes dashboard visualizations (monthly sales, best-selling products, sales by country, and more), each with a brief explanation.
+   - **Note:** The report does not include a Table of Contents.
 
 ## Presentation Guidelines
 
