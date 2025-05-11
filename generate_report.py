@@ -195,53 +195,79 @@ preprocessing_steps = [
 for step in preprocessing_steps:
     doc.add_paragraph(step, style='List Bullet')
 
-# Section 1: Key Visual Insights
-add_heading_with_style(doc, 'Section 1: Key Visual Insights', 1)
-add_paragraph_with_style(doc, 'This section presents two insightful charts from the analysis: Monthly Sales Trends and Country-wise Sales Distribution. Each chart is chosen for its clarity, conciseness, and ability to highlight key patterns in the data.')
+# Task 1: Visualising Retail Sales for Non-Technical Stakeholders
+add_heading_with_style(doc, 'Task 1: Visualising Retail Sales for Non-Technical Stakeholders', 1)
+add_paragraph_with_style(doc, 'You are tasked with presenting the sales performance of the online retail store over the last year to a group of non-technical business executives. Use the Online Retail Data Set to create insightful visualisations.')
+add_paragraph_with_style(doc, 'The following charts were created to address this task:')
 
-# Monthly Sales Trends
-add_heading_with_style(doc, 'Monthly Sales Trends', 2)
+# Monthly Sales Trends (Invoice Date vs. Sales)
+add_heading_with_style(doc, 'Monthly Sales Trends (Invoice Date vs. Sales)', 2)
 if os.path.exists(os.path.join('workingcode', 'monthly_sales_trends.png')):
     doc.add_picture(os.path.join('workingcode', 'monthly_sales_trends.png'), width=Inches(6))
-    add_paragraph_with_style(doc, 'This line chart shows the monthly sales performance over time. The chart is clear and easy to follow, revealing distinct seasonal patterns and peak sales during holiday periods. The design is clean and focuses attention on the overall trend, making it captivating and concise for business insights.')
+    add_paragraph_with_style(doc, (
+        'A line chart was chosen to represent monthly sales trends because it clearly illustrates changes in sales over time, making it easy to spot patterns and trends. '
+        'The line chart is particularly effective for time-series data, enabling non-technical stakeholders to quickly understand seasonal peaks and troughs.\n'
+        '\nApplication of the 4 C’s:\n'
+        '- Clear: Axis labels, title, and legends are used for clarity.\n'
+        '- Clean: Minimal visual clutter, focusing on the trend line.\n'
+        '- Concise: Only essential data is shown.\n'
+        '- Captivating: Color and line weight are used to draw attention to key changes.'
+    ))
 else:
     add_paragraph_with_style(doc, '[Visualization not available: Monthly Sales Trends]', style='Normal')
 
-# Country-wise Sales Distribution
-add_heading_with_style(doc, 'Country-wise Sales Distribution', 2)
+# Country-wise Sales Distribution (Country vs. Sales)
+add_heading_with_style(doc, 'Country-wise Sales Distribution (Country vs. Sales)', 2)
 if os.path.exists(os.path.join('workingcode', 'sales_by_country.png')):
     doc.add_picture(os.path.join('workingcode', 'sales_by_country.png'), width=Inches(6))
-    add_paragraph_with_style(doc, 'This bar chart displays sales distribution across countries. The UK stands out as the dominant market, with other European countries also contributing significantly. The chart is concise, clean, and uses color to clearly distinguish between countries, helping to identify potential growth regions.')
+    add_paragraph_with_style(doc, (
+        'A bar chart was chosen for country-wise sales distribution because it is ideal for comparing sales across discrete categories (countries). '
+        'Bar charts are intuitive and familiar, making them accessible to non-technical audiences.\n'
+        '\nApplication of the 4 C’s:\n'
+        '- Clear: Each bar is labeled and colored distinctly.\n'
+        '- Clean: The chart avoids unnecessary gridlines and clutter.\n'
+        '- Concise: Only top countries are shown for focus.\n'
+        '- Captivating: Use of color and sorting emphasizes the leading markets.'
+    ))
 else:
     add_paragraph_with_style(doc, '[Visualization not available: Country-wise Sales Distribution]', style='Normal')
 
+doc.add_paragraph('')
+add_paragraph_with_style(doc, 'In summary, both visualizations were selected and designed to maximize accessibility and insight for non-technical business executives, ensuring that decision-makers can quickly grasp the most important sales patterns and market opportunities.')
 doc.add_page_break()
 
-# Section 2: Comprehensive Dashboard
-add_heading_with_style(doc, 'Section 2: Comprehensive Dashboard', 1)
-add_paragraph_with_style(doc, 'This section features a comprehensive dashboard with visualizations of monthly sales trends, best-selling products, and sales by country. The dashboard is designed for functionality and ease of navigation, providing actionable insights for decision-makers.')
+# Task 2: Creating a Sales Performance Dashboard
+add_heading_with_style(doc, 'Task 2: Creating a Sales Performance Dashboard', 1)
+add_paragraph_with_style(doc, 'The management team requires a dashboard to monitor sales performance, broken down by product sales and country sales. The dashboard below uses cleaned data from Task 1 and is designed to be comprehensive, functional, and easy to navigate.')
+add_paragraph_with_style(doc, 'The dashboard includes the following visualizations: monthly sales trends, best-selling products, and sales by country. Each chart is accompanied by a detailed explanation.')
 
-# Monthly Sales (Dashboard)
+# Dashboard: Monthly Sales Trends
 add_heading_with_style(doc, 'Dashboard: Monthly Sales Trends', 2)
 if os.path.exists(os.path.join('workingcode', 'monthly_sales_trends.png')):
     doc.add_picture(os.path.join('workingcode', 'monthly_sales_trends.png'), width=Inches(6))
-    add_paragraph_with_style(doc, 'The dashboard view of monthly sales trends allows for quick identification of peak periods and overall growth. The interactive design (in the original dashboard) enables users to filter and explore trends by time period.')
+    add_paragraph_with_style(doc, (
+        'This dashboard component allows management to monitor monthly sales trends at a glance. The interactive (original) version enables filtering and closer inspection of peak periods, supporting timely business decisions. The chart is clear and concise, with a focus on actionable insights.'
+    ))
 else:
     add_paragraph_with_style(doc, '[Visualization not available: Monthly Sales Trends]', style='Normal')
 
-# Best-selling Products
+# Dashboard: Best-selling Products
 add_heading_with_style(doc, 'Dashboard: Best-selling Products', 2)
 if os.path.exists(os.path.join('workingcode', 'top_products.png')):
     doc.add_picture(os.path.join('workingcode', 'top_products.png'), width=Inches(6))
-    add_paragraph_with_style(doc, 'This chart highlights the top-performing products. It is clean and easy to interpret, showing that paper craft and seasonal items are among the best sellers. Such insights help in inventory and marketing planning.')
+    add_paragraph_with_style(doc, (
+        'This bar chart displays the best-selling products, helping management identify which items drive the most revenue. The clean layout and color-coding make it easy to compare product performance. Such insights are critical for inventory planning and targeted marketing.'
+    ))
 else:
     add_paragraph_with_style(doc, '[Visualization not available: Best-selling Products]', style='Normal')
 
-# Sales by Country (Dashboard)
+# Dashboard: Sales by Country
 add_heading_with_style(doc, 'Dashboard: Sales by Country', 2)
 if os.path.exists(os.path.join('workingcode', 'sales_by_country.png')):
     doc.add_picture(os.path.join('workingcode', 'sales_by_country.png'), width=Inches(6))
-    add_paragraph_with_style(doc, 'The dashboard provides a clear view of sales by country, reaffirming the UK’s dominance and identifying other key markets. The functional design makes it easy to compare sales across regions.')
+    add_paragraph_with_style(doc, (
+        'This dashboard chart provides a breakdown of sales by country, reaffirming the UK’s leading position and highlighting other key markets. The functional design enables quick comparison and supports strategic planning for market expansion.'
+    ))
 else:
     add_paragraph_with_style(doc, '[Visualization not available: Sales by Country]', style='Normal')
 
@@ -254,7 +280,6 @@ if os.path.exists(os.path.join('workingcode', 'seasonal_analysis.png')):
     add_heading_with_style(doc, 'Dashboard: Seasonal Analysis', 2)
     doc.add_picture(os.path.join('workingcode', 'seasonal_analysis.png'), width=Inches(6))
     add_paragraph_with_style(doc, 'Seasonal analysis reveals the impact of holidays and promotions on sales, providing insights for campaign planning.')
-
 doc.add_page_break()
 
 # Add Interactive Visualizations Section
