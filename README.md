@@ -206,6 +206,17 @@ Focused on non-technical stakeholder presentation:
      2. **Comprehensive Dashboard**: Includes dashboard visualizations (monthly sales, best-selling products, sales by country, and more), each with a brief explanation.
    - **Note:** The report does not include a Table of Contents.
 
+4. **Convert the DOCX report to PDF:**
+   - First, install the required tool (if not already installed):
+     ```bash
+     pip install docx2pdf
+     ```
+   - Then, run the following command:
+     ```bash
+     docx2pdf Assignment_Submission_Report.docx Assignment_Submission_Report.pdf
+     ```
+   - This will generate a PDF version of your report as `Assignment_Submission_Report.pdf` in the same directory.
+
 ## Presentation Guidelines
 
 1. **Technical Presentations**
